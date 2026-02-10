@@ -1,0 +1,2 @@
+node 18.20.4
+Angular 15 (npm install -g @angular/cli@15)
