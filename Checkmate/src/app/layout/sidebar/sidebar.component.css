@@ -1,0 +1,75 @@
+/* ===== SIDEBAR CONTAINER ===== */
+.sidebar {
+  width: 240px;
+  height: 100%;
+  background: linear-gradient(180deg, #1f3c88 0%, #1b2e66 100%);
+  color: #cfd8ff;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 40px 20px;
+}
+
+/* ===== MENU ===== */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== MENU ITEMS ===== */
+.menu li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Default icon color */
+.icon {
+  font-size: 20px;
+  color: #cfd8ff;
+  transition: 0.3s ease;
+}
+
+/* Default text */
+.menu-text {
+  transition: 0.3s ease;
+}
+
+/* ===== HOVER EFFECT ===== */
+.menu li:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menu li:hover .icon {
+  color: #ffffff;
+}
+
+.menu li:hover .menu-text {
+  color: #ffffff;
+}
+
+/* ===== ACTIVE ITEM ===== */
+.menu li.active {
+  background: linear-gradient(90deg, #4f7df3, #2a5298);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+/* Active text */
+.menu li.active .menu-text {
+  color: white;
+}
+
+/* Active icon */
+.menu li.active .icon {
+  color: white;
+}

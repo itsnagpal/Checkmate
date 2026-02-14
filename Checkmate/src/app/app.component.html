@@ -1,2 +1,31 @@
-<h1>{{2+2}}</h1>
-<h2>{{title}}</h2>
+<div class="outer-bg">
+
+  <div class="dashboard-wrapper">
+
+    <!-- Top Navbar -->
+    <div class="top-navbar">
+  <div class="left-section">
+  <img src="assets/logo.png" class="logo-img" alt="logo" />
+  <div class="divider"></div>
+  <h2>My Dashboard</h2>
+  </div>
+
+
+      <div class="right-section">
+        <input type="text" placeholder="Search..." />
+        <span class="bell">🔔</span>
+      </div>
+    </div>
+
+    <!-- Body Section -->
+    <div class="body-section">
+      <app-sidebar></app-sidebar>
+
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+
+</div>
