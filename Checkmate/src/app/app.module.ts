@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
+import { ChecklistDetailComponent } from './pages/checklist-detail/checklist-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     HeaderComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ChecklistDetailComponent
   ],
   imports: [
     BrowserModule,
