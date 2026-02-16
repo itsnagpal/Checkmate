@@ -1,0 +1,359 @@
+/* CheckMate landing – reference design: blue, white, orange */
+
+.landing-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== TOP NAV (blue) ===== */
+.landing-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 40px;
+  background: #1a365d;
+  color: white;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(125, 211, 252, 0.35);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  opacity: 0.9;
+}
+
+.btn-login {
+  padding: 8px 20px;
+  background: #f97316;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.35);
+}
+
+.btn-login:hover {
+  background: #ea580c;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+/* ===== HERO (blue gradient, then white) ===== */
+.hero {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(135deg, #1a365d 0%, #2d5a87 45%, #3b6b9c 100%);
+  padding: 60px 40px 120px;
+  min-height: 420px;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-title {
+  color: white;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 16px 0;
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #f97316;
+  color: white;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-cta:hover {
+  background: #ea580c;
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45);
+}
+
+/* Illustration area – outline style, light blue accents */
+.hero-illustration {
+  flex-shrink: 0;
+  width: 320px;
+  height: 240px;
+}
+
+.illus-windows {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.illus-window {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(125, 211, 252, 0.6);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.illus-window .check {
+  color: #7dd3fc;
+  margin-right: 6px;
+}
+
+.illus-connector {
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  border-bottom: 2px dashed rgba(125, 211, 252, 0.6);
+  top: 50%;
+  left: 50%;
+}
+
+.illus-node {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(125, 211, 252, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.illus-node--user { margin-top: 8px; }
+.illus-node--gear { margin-top: 8px; margin-left: 12px; }
+
+/* White bottom half under hero */
+.hero-bottom-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  min-height: 200px;
+  background: white;
+  z-index: 0;
+}
+
+/* ===== WHY CHOOSE CHECKMATE (white) ===== */
+.features {
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 70px 40px 80px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 48px 0;
+}
+
+.features-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.feature-card {
+  background: white;
+  padding: 32px 28px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 10px 0;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ===== FOOTER (dark) ===== */
+.landing-footer {
+  background: #1e293b;
+  padding: 24px;
+  text-align: center;
+}
+
+.landing-footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-illustration {
+    width: 280px;
+    height: 200px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-nav {
+    padding: 12px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .hero {
+    padding: 40px 20px 100px;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .hero-illustration {
+    display: none;
+  }
+
+  .features {
+    padding: 50px 20px 60px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .feature-card {
+    padding: 26px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 1.1rem;
+  }
+
+  .btn-cta {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .landing-footer p {
+    font-size: 0.8rem;
+  }
+}

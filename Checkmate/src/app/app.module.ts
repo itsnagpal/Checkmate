@@ -7,6 +7,7 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { ChecklistDetailComponent } from './pages/checklist-detail/checklist-detail.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ChecklistDetailComponent } from './pages/checklist-detail/checklist-det
     SidebarComponent,
     HeaderComponent,
     UserDashboardComponent,
-    ChecklistDetailComponent
+    ChecklistDetailComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
