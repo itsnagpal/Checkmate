@@ -8,6 +8,9 @@ import { HeaderComponent } from './layout/header/header.component';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { ChecklistDetailComponent } from './pages/checklist-detail/checklist-detail.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
     HeaderComponent,
     UserDashboardComponent,
     ChecklistDetailComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    LoginComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

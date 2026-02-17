@@ -1,48 +1,48 @@
 <div class="sidebar">
 
-  <ul class="menu">
+  <ul class="menu" *ngIf="!isAdmin()">
 
-    <li routerLink="/"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }">
-
-      <span class="material-icons icon">home</span>
-      <span class="menu-text">Home</span>
-
-    </li>
-
-    <li routerLink="/dashboard"
-        routerLinkActive="active">
-
+    <li routerLink="/dashboard" routerLinkActive="active">
       <span class="material-icons icon">dashboard</span>
-      <span class="menu-text">Dashboard</span>
-
+      <span class="menu-text">My Dashboard</span>
     </li>
 
-    <li routerLink="/checklists"
-        routerLinkActive="active">
-
+    <li routerLink="/checklists" routerLinkActive="active">
       <span class="material-icons icon">checklist</span>
       <span class="menu-text">Checklists</span>
-
     </li>
 
-    <li routerLink="/reports"
-        routerLinkActive="active">
-
+    <li routerLink="/reports" routerLinkActive="active">
       <span class="material-icons icon">bar_chart</span>
       <span class="menu-text">Reports</span>
-
     </li>
 
-    <li routerLink="/admin"
-        routerLinkActive="active">
+  </ul>
 
+  <ul class="menu" *ngIf="isAdmin()">
+
+    <li routerLink="/admin-dashboard" routerLinkActive="active">
       <span class="material-icons icon">admin_panel_settings</span>
-      <span class="menu-text">Admin Panel</span>
-
+      <span class="menu-text">Admin Dashboard</span>
     </li>
 
+    <li routerLink="/admin/users" routerLinkActive="active">
+      <span class="material-icons icon">group</span>
+      <span class="menu-text">Users</span>
+    </li>
+
+    <li routerLink="/admin/settings" routerLinkActive="active">
+      <span class="material-icons icon">settings</span>
+      <span class="menu-text">Settings</span>
+    </li>
+
+  </ul>
+
+  <ul class="menu logout-section">
+    <li routerLink="/login">
+      <span class="material-icons icon">logout</span>
+      <span class="menu-text">Logout</span>
+    </li>
   </ul>
 
 </div>
