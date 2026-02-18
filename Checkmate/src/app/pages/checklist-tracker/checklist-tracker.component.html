@@ -1,0 +1,32 @@
+<div class="page">
+
+  <h1>Checklist Tracker</h1>
+
+  <div class="card-container">
+
+    <div *ngFor="let item of checklists" class="card">
+
+      <h3>{{ item.name }}</h3>
+      <p><strong>Department:</strong> {{ item.department }}</p>
+
+      <div class="progress-bar">
+        <div class="progress-fill"
+             [style.width.%]="item.progress">
+        </div>
+      </div>
+
+      <p><strong>{{ item.progress }}%</strong> Complete</p>
+
+      <span class="status"
+            [ngClass]="{
+              'pending': item.status === 'Pending',
+              'progress': item.status === 'In Progress',
+              'completed': item.status === 'Completed'
+            }">
+        {{ item.status }}
+      </span>
+
+    </div>
+
+  </div>
+</div>
