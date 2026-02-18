@@ -3,21 +3,26 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserDashboardComponent } from './pages/user-dashboard/user-dashboard.component';
 import { ChecklistDetailComponent } from './pages/checklist-detail/checklist-detail.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { LoginComponent } from './pages/login/login.component'; // Ensure Import
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'landing', component: LandingPageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'dashboard', component: UserDashboardComponent },
+
+ 
   { path: 'checklists', component: ChecklistDetailComponent },
   { path: 'reports', component: UserDashboardComponent },
   { path: 'admin', component: UserDashboardComponent },
   { path: 'checklist-detail', component: ChecklistDetailComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
-
