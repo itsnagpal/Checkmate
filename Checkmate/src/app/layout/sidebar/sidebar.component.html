@@ -1,5 +1,6 @@
 <div class="sidebar">
 
+  <!-- ================= USER SIDEBAR ================= -->
   <ul class="menu" *ngIf="!isAdmin()">
 
     <li routerLink="/dashboard" routerLinkActive="active">
@@ -17,27 +18,76 @@
       <span class="menu-text">Reports</span>
     </li>
 
+    <li routerLink="/profile" routerLinkActive="active">
+      <span class="material-icons icon">person</span>
+      <span class="menu-text">Profile</span>
+    </li>
+
   </ul>
 
+
+  <!-- ================= ADMIN SIDEBAR ================= -->
   <ul class="menu" *ngIf="isAdmin()">
 
     <li routerLink="/admin-dashboard" routerLinkActive="active">
-      <span class="material-icons icon">admin_panel_settings</span>
-      <span class="menu-text">Admin Dashboard</span>
+      <span class="material-icons icon">home</span>
+      <span class="menu-text">Dashboard</span>
+    </li>
+
+    <li routerLink="/admin/checklists" routerLinkActive="active">
+      <span class="material-icons icon">checklist</span>
+      <span class="menu-text">All Checklists</span>
+    </li>
+
+    <li routerLink="/admin/tasks" routerLinkActive="active">
+      <span class="material-icons icon">assignment</span>
+      <span class="menu-text">My Tasks</span>
     </li>
 
     <li routerLink="/admin/users" routerLinkActive="active">
       <span class="material-icons icon">group</span>
-      <span class="menu-text">Users</span>
+      <span class="menu-text">User Management</span>
     </li>
 
-    <li routerLink="/admin/settings" routerLinkActive="active">
-      <span class="material-icons icon">settings</span>
-      <span class="menu-text">Settings</span>
+    <li routerLink="/admin/roles" routerLinkActive="active">
+      <span class="material-icons icon">verified_user</span>
+      <span class="menu-text">Roles & Permissions</span>
+    </li>
+
+    <li routerLink="/admin/departments" routerLinkActive="active">
+      <span class="material-icons icon">apartment</span>
+      <span class="menu-text">Departments</span>
+    </li>
+
+    <li routerLink="/admin/templates" routerLinkActive="active">
+      <span class="material-icons icon">view_module</span>
+      <span class="menu-text">Templates</span>
+    </li>
+
+    <li routerLink="/admin/workflow" routerLinkActive="active">
+      <span class="material-icons icon">schema</span>
+      <span class="menu-text">Workflow Designer</span>
+    </li>
+
+    <li routerLink="/admin/reports" routerLinkActive="active">
+      <span class="material-icons icon">analytics</span>
+      <span class="menu-text">Reports</span>
+    </li>
+
+    <li routerLink="/admin/notifications" routerLinkActive="active">
+      <span class="material-icons icon">notifications</span>
+      <span class="menu-text">Notifications</span>
+    </li>
+
+    <li routerLink="/admin/profile" routerLinkActive="active">
+      <span class="material-icons icon">person</span>
+      <span class="menu-text">Profile</span>
     </li>
 
   </ul>
 
+
+  <!-- ================= LOGOUT ================= -->
   <ul class="menu logout-section">
     <li routerLink="/login">
       <span class="material-icons icon">logout</span>

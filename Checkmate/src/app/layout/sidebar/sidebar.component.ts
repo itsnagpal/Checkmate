@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +8,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-  constructor(public router: Router) {}
 
-  // Helper function to check if we are in Admin area
+  constructor(
+    public router: Router,
+    public authService: AuthService
+  ) {}
+
+  // Highlight active route
+  isActive(route: string): boolean {
+    return this.router.url.includes(route);
+  }
+
+  // Check if logged user is admin
   isAdmin(): boolean {
-    return this.router.url.includes('admin-dashboard');
+    return this.authService.isAdmin();
   }
 }
