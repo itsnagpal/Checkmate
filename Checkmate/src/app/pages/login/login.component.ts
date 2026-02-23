@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
+
+interface LoginForm {
+  email: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-login',
@@ -7,28 +13,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginObj: any = {
+  loginObj: LoginForm = {
     email: '',
     password: ''
   };
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) {}
 
-  onLogin() {
-  // 1. Validation check
-  if (this.loginObj.email && this.loginObj.password) {
-    
-    // 2. Mock Logic (Bina Alert ke seedha navigate karega)
-    if (this.loginObj.email === 'admin@checkmate.com') {
-      this.router.navigate(['/admin-dashboard']); // Admin -> Admin Dashboard
+  onLogin(): void {
+    // Validation check
+    if (this.loginObj.email && this.loginObj.password) {
+      
+      // Use AuthService for login
+      const success = this.authService.login(this.loginObj.email, this.loginObj.password);
+      
+      if (success) {
+        // Navigate based on role
+        if (this.authService.isAdmin()) {
+          this.router.navigate(['/admin-dashboard']);
+        } else {
+          this.router.navigate(['/dashboard']);
+        }
+      } else {
+        alert('Login failed. Please try again.');
+      }
+
     } else {
-      this.router.navigate(['/dashboard']); // Baaki sab -> User Dashboard
+      alert('Please enter email and password');
     }
-
-  } else {
-    // Ye error alert rehne de sakte hain taaki user ko pata chale form khali hai
-    // Ya isse bhi hata kar console.log kar sakte hain
-    alert('Please enter email and password'); 
   }
-}
 }

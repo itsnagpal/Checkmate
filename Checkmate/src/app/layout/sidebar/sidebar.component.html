@@ -74,6 +74,11 @@
       <span class="menu-text">Reports</span>
     </li>
 
+    <li routerLink="/admin/security" routerLinkActive="active">
+      <span class="material-icons icon">security</span>
+      <span class="menu-text">Security & Compliance</span>
+    </li>
+
     <li routerLink="/admin/notifications" routerLinkActive="active">
       <span class="material-icons icon">notifications</span>
       <span class="menu-text">Notifications</span>
@@ -89,7 +94,7 @@
 
   <!-- ================= LOGOUT ================= -->
   <ul class="menu logout-section">
-    <li routerLink="/login">
+    <li (click)="onLogout()">
       <span class="material-icons icon">logout</span>
       <span class="menu-text">Logout</span>
     </li>

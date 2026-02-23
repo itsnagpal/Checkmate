@@ -23,4 +23,9 @@ export class SidebarComponent {
   isAdmin(): boolean {
     return this.authService.isAdmin();
   }
+
+  // Logout handler
+  onLogout(): void {
+    this.authService.logout();
+  }
 }

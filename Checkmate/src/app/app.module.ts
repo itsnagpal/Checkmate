@@ -15,6 +15,21 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { ChecklistBuilderComponent } from './pages/checklist-builder/checklist-builder.component';
 import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-tracker.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
+import { SecurityComplianceComponent } from './pages/security-compliance/security-compliance.component';
+
+// New components
+import { ReportsComponent } from './pages/reports/reports.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { AdminChecklistsComponent } from './pages/admin/admin-checklists/admin-checklists.component';
+import { AdminTasksComponent } from './pages/admin/admin-tasks/admin-tasks.component';
+import { AdminRolesComponent } from './pages/admin/admin-roles/admin-roles.component';
+import { AdminDepartmentsComponent } from './pages/admin/admin-departments/admin-departments.component';
+import { AdminTemplatesComponent } from './pages/admin/admin-templates/admin-templates.component';
+import { AdminWorkflowComponent } from './pages/admin/admin-workflow/admin-workflow.component';
+import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
+import { AdminNotificationsComponent } from './pages/admin/admin-notifications/admin-notifications.component';
+import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +43,20 @@ import { UserManagementComponent } from './pages/user-management/user-management
     AdminDashboardComponent,
     ChecklistBuilderComponent,
     ChecklistTrackerComponent,
-    UserManagementComponent
+    UserManagementComponent,
+    SecurityComplianceComponent,
+    ReportsComponent,
+    ProfileComponent,
+    NotFoundComponent,
+    AdminChecklistsComponent,
+    AdminTasksComponent,
+    AdminRolesComponent,
+    AdminDepartmentsComponent,
+    AdminTemplatesComponent,
+    AdminWorkflowComponent,
+    AdminReportsComponent,
+    AdminNotificationsComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,
