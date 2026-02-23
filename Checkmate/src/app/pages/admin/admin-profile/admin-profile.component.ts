@@ -2,14 +2,43 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-admin-profile',
-  template: `
-    <div class="page-container">
-      <h1>Admin Profile</h1>
-      <div class="card">
-        <p>Admin profile settings coming soon...</p>
-      </div>
-    </div>
-  `,
-  styles: [`.page-container { padding: 20px; } h1 { margin-bottom: 20px; color: #333; }`]
+  templateUrl: './admin-profile.component.html',
+  styleUrls: ['./admin-profile.component.css']
 })
-export class AdminProfileComponent {}
+export class AdminProfileComponent {
+
+  user = {
+    fullName: 'John Doe',
+    email: 'john.doe@company.com',
+    jobTitle: 'IT Support',
+    department: 'IT Department',
+    inAppAlerts: true,
+    newAssignments: true,
+    taskOverdue: false,
+    workflowApprovals: false,
+    newPassword: '',
+    confirmPassword: ''
+  };
+
+  filters = {
+    dateRange: '',
+    department: '',
+    owner: ''
+  };
+
+  dateOptions = ['Today', 'This Week', 'This Month', 'Custom'];
+  departmentOptions = ['IT', 'HR', 'Marketing', 'Sales'];
+  ownerOptions = ['Admin', 'Manager', 'User'];
+
+  applyFilters() {
+    console.log('Filters Applied:', this.filters);
+  }
+
+  saveChanges() {
+    alert('Changes saved!');
+  }
+
+  updateProfile() {
+    alert('Profile updated!');
+  }
+}

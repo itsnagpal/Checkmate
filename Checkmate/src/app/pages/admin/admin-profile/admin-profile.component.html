@@ -1,0 +1,89 @@
+<div class="profile-container">
+
+  <h2 class="page-title">My Profile</h2>
+
+  <div class="filter-section">
+
+    <div class="filter-item">
+      <label>Date Range</label>
+      <select [(ngModel)]="filters.dateRange">
+        <option value="">Select</option>
+        <option *ngFor="let d of dateOptions" [value]="d">{{ d }}</option>
+      </select>
+    </div>
+
+    <div class="filter-item">
+      <label>Department</label>
+      <select [(ngModel)]="filters.department">
+        <option value="">Select</option>
+        <option *ngFor="let d of departmentOptions" [value]="d">{{ d }}</option>
+      </select>
+    </div>
+
+    <div class="filter-item">
+      <label>Owner</label>
+      <select [(ngModel)]="filters.owner">
+        <option value="">Select</option>
+        <option *ngFor="let o of ownerOptions" [value]="o">{{ o }}</option>
+      </select>
+    </div>
+
+    <button class="apply-btn" (click)="applyFilters()">Apply</button>
+
+  </div>
+
+  <div class="profile-grid">
+
+    <div class="card">
+      <h3>Personal Information</h3>
+
+      <input [(ngModel)]="user.fullName" type="text" placeholder="Full Name">
+      <input [(ngModel)]="user.email" type="email" placeholder="Email Address">
+      <input [(ngModel)]="user.jobTitle" type="text" placeholder="Job Title">
+      <input [(ngModel)]="user.department" type="text" placeholder="Department">
+
+      <h4>Change Password</h4>
+      <input [(ngModel)]="user.newPassword" type="password" placeholder="New Password">
+      <input [(ngModel)]="user.confirmPassword" type="password" placeholder="Confirm Password">
+    </div>
+
+    <div>
+
+      <div class="card">
+        <h3>Notification Preferences</h3>
+
+        <div class="toggle">
+          <span>In-App Alerts</span>
+          <input type="checkbox" [(ngModel)]="user.inAppAlerts">
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Email Notifications</h3>
+
+        <div class="toggle">
+          <span>New Assignments</span>
+          <input type="checkbox" [(ngModel)]="user.newAssignments">
+        </div>
+
+        <div class="toggle">
+          <span>Task Overdue</span>
+          <input type="checkbox" [(ngModel)]="user.taskOverdue">
+        </div>
+
+        <div class="toggle">
+          <span>Workflow Approvals</span>
+          <input type="checkbox" [(ngModel)]="user.workflowApprovals">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="button-group">
+    <button class="secondary" (click)="saveChanges()">Save Changes</button>
+    <button class="primary" (click)="updateProfile()">Update Profile</button>
+  </div>
+
+</div>
