@@ -10,6 +10,8 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 import { ChecklistBuilderComponent } from './pages/checklist-builder/checklist-builder.component';
 import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-tracker.component';
 
+import { UserManagementComponent } from './pages/user-management/user-management.component';
+
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'landing', component: LandingPageComponent },
@@ -25,6 +27,8 @@ const routes: Routes = [
 
   { path: 'reports', component: UserDashboardComponent },
   { path: 'admin', component: UserDashboardComponent },
+
+  { path: 'admin/users', component: UserManagementComponent },
 
   { path: '**', redirectTo: '' },
 ];

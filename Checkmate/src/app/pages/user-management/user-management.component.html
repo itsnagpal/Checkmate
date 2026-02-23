@@ -1,0 +1,70 @@
+<div class="page-container">
+
+  <div class="top-header">
+    <h1>User Management</h1>
+
+    <div class="header-actions">
+      <button class="primary-btn">Admin Panel</button>
+      <button class="secondary-btn">Save as Draft</button>
+
+      <input type="text" placeholder="Search" class="search-input">
+      <button class="add-btn">Add New User</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="user-list">
+
+      <div class="user-row"
+           *ngFor="let user of users"
+           (click)="selectUser(user)"
+           [class.active]="selectedUser === user">
+
+        <div class="user-info">
+          <div class="avatar"></div>
+          <div>
+            <div class="name">{{ user.name }}</div>
+            <div class="department">{{ user.department }}</div>
+          </div>
+        </div>
+
+        <div class="role-toggle">
+          <label class="switch">
+            <input type="checkbox" [(ngModel)]="user.roleEnabled">
+            <span class="slider"></span>
+          </label>
+          <span class="role-label">{{ user.role }}</span>
+        </div>
+
+        <div class="executor-toggle">
+          <label class="switch green">
+            <input type="checkbox" [(ngModel)]="user.executorEnabled">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="side-panel" *ngIf="selectedUser">
+      <h3>Task Name</h3>
+      <p>Edit User</p>
+
+      <div class="panel-section">
+        <h4>Assign</h4>
+        <label><input type="radio"> Change Role</label>
+        <label><input type="radio"> Change Department</label>
+      </div>
+
+      <div class="panel-section">
+        <h4>Actions</h4>
+        <button class="danger-btn">Disable Account</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
