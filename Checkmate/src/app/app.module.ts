@@ -14,6 +14,7 @@ import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard
 
 import { ChecklistBuilderComponent } from './pages/checklist-builder/checklist-builder.component';
 import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-tracker.component';
+import { UserManagementComponent } from './pages/user-management/user-management.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-t
     LoginComponent,
     AdminDashboardComponent,
     ChecklistBuilderComponent,
-    ChecklistTrackerComponent
+    ChecklistTrackerComponent,
+    UserManagementComponent
   ],
   imports: [
     BrowserModule,
