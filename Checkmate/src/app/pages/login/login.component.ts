@@ -13,6 +13,7 @@ interface LoginForm {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
   loginObj: LoginForm = {
     email: '',
     password: ''
@@ -24,14 +25,15 @@ export class LoginComponent {
   ) {}
 
   onLogin(): void {
-    // Validation check
+
     if (this.loginObj.email && this.loginObj.password) {
-      
-      // Use AuthService for login
-      const success = this.authService.login(this.loginObj.email, this.loginObj.password);
-      
+
+      const success = this.authService.login(
+        this.loginObj.email,
+        this.loginObj.password
+      );
+
       if (success) {
-        // Navigate based on role
         if (this.authService.isAdmin()) {
           this.router.navigate(['/admin-dashboard']);
         } else {
