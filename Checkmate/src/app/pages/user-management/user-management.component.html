@@ -1,67 +1,131 @@
 <div class="page-container">
 
+  <!-- HEADER -->
   <div class="top-header">
     <h1>User Management</h1>
 
     <div class="header-actions">
-      <button class="primary-btn">Admin Panel</button>
-      <button class="secondary-btn">Save as Draft</button>
+      <input type="text"
+             placeholder="Search"
+             class="search-input"
+             [(ngModel)]="searchText">
 
-      <input type="text" placeholder="Search" class="search-input">
-      <button class="add-btn">Add New User</button>
+      <button class="add-btn"
+              (click)="openAddUser()">
+        Add New User
+      </button>
     </div>
   </div>
 
   <div class="content">
 
+    <!-- LEFT SIDE -->
     <div class="user-list">
 
       <div class="user-row"
-           *ngFor="let user of users"
+           *ngFor="let user of filteredUsers"
            (click)="selectUser(user)"
-           [class.active]="selectedUser === user">
+           [class.active]="selectedUser?.id === user.id">
 
-        <div class="user-info">
-          <div class="avatar"></div>
-          <div>
-            <div class="name">{{ user.name }}</div>
-            <div class="department">{{ user.department }}</div>
-          </div>
+        <div>
+          <div class="name">{{ user.name }}</div>
+          <div class="department">{{ user.department }}</div>
         </div>
 
-        <div class="role-toggle">
-          <label class="switch">
-            <input type="checkbox" [(ngModel)]="user.roleEnabled">
-            <span class="slider"></span>
-          </label>
-          <span class="role-label">{{ user.role }}</span>
-        </div>
-
-        <div class="executor-toggle">
-          <label class="switch green">
-            <input type="checkbox" [(ngModel)]="user.executorEnabled">
-            <span class="slider"></span>
-          </label>
+        <div>
+          {{ user.role }}
         </div>
 
       </div>
 
     </div>
 
-    <div class="side-panel" *ngIf="selectedUser">
-      <h3>Task Name</h3>
-      <p>Edit User</p>
 
-      <div class="panel-section">
-        <h4>Assign</h4>
-        <label><input type="radio"> Change Role</label>
-        <label><input type="radio"> Change Department</label>
+    <!-- RIGHT SIDE -->
+    <div class="side-panel">
+
+      <!-- VIEW MODE -->
+      <div *ngIf="selectedUser && !isEditing && !isAdding">
+
+        <h3>{{ selectedUser.name }}</h3>
+        <p><strong>Department:</strong> {{ selectedUser.department }}</p>
+        <p><strong>Role:</strong> {{ selectedUser.role }}</p>
+        <p><strong>Status:</strong>
+          {{ selectedUser.active ? 'Active' : 'Disabled' }}
+        </p>
+
+        <button class="primary-btn"
+                (click)="openEditUser()">
+          Edit User
+        </button>
+
+        <button class="danger-btn"
+                (click)="disableAccount()">
+          Disable User
+        </button>
+
+        <hr>
+
+        <h4>Allocated Tasks</h4>
+
+        <div *ngIf="selectedUser.tasks.length === 0">
+          No tasks assigned
+        </div>
+
+        <div *ngFor="let task of selectedUser.tasks"
+             class="task-item">
+          {{ task }}
+          <button (click)="removeTask(task)">✖</button>
+        </div>
+
+        <div class="task-assign">
+          <input type="text"
+                 [(ngModel)]="newTask"
+                 placeholder="New task">
+          <button (click)="allocateTask()">Allocate</button>
+        </div>
+
       </div>
 
-      <div class="panel-section">
-        <h4>Actions</h4>
-        <button class="danger-btn">Disable Account</button>
-      </div>
+
+      <!-- ADD OR EDIT MODE -->
+      <!-- ADD OR EDIT MODE -->
+<div *ngIf="isEditing || isAdding">
+
+  <h3>{{ isAdding ? 'Add User' : 'Edit User' }}</h3>
+
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="formUser.name">
+  </div>
+
+  <div class="form-group">
+    <label>Department</label>
+    <input type="text" [(ngModel)]="formUser.department">
+  </div>
+
+  <div class="form-group">
+    <label>Role</label>
+    <input type="text" [(ngModel)]="formUser.role">
+  </div>
+
+  <!-- 🔥 SHOW ONLY WHEN ADDING -->
+  <div class="form-group" *ngIf="isAdding">
+    <label>Assign Initial Task</label>
+    <input type="text" [(ngModel)]="initialTask" placeholder="Enter task">
+  </div>
+
+  <div class="form-buttons">
+    <button class="primary-btn" (click)="saveUser()">
+      Save
+    </button>
+
+    <button class="secondary-btn" (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+
+</div>
 
     </div>
 

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 interface User {
+  id: number;
   name: string;
   department: string;
-  roleEnabled: boolean;
-  executorEnabled: boolean;
   role: string;
+  active: boolean;
+  tasks: string[];
 }
 
 @Component({
@@ -15,41 +16,106 @@ interface User {
 })
 export class UserManagementComponent {
 
+  searchText = '';
+  newTask = '';
+  initialTask = '';   // 🔥 NEW for Add User
+
+  isEditing = false;
+  isAdding = false;
+
   users: User[] = [
-    {
-      name: 'Sarah Chen',
-      department: 'Admin',
-      roleEnabled: true,
-      executorEnabled: false,
-      role: 'Reviewer'
-    },
-    {
-      name: 'Sarah Dhen',
-      department: 'HR',
-      roleEnabled: false,
-      executorEnabled: true,
-      role: 'HR'
-    },
-    {
-      name: 'John Doe',
-      department: 'Engineering',
-      roleEnabled: true,
-      executorEnabled: true,
-      role: 'Engineering'
-    },
-    {
-      name: 'Setup Pits & Headset',
-      department: 'Sales',
-      roleEnabled: true,
-      executorEnabled: true,
-      role: 'Sales'
-    }
+    { id: 1, name: 'Ram', department: 'Admin', role: 'Reviewer', active: true, tasks: ['Audit Review'] },
+    { id: 2, name: 'Garv', department: 'HR', role: 'HR', active: true, tasks: [] },
+    { id: 3, name: 'John Doe', department: 'Engineering', role: 'Engineer', active: true, tasks: ['System Setup'] }
   ];
 
   selectedUser: User | null = null;
 
-  selectUser(user: User) {
-    this.selectedUser = user;
+  formUser: User = this.getEmptyUser();
+
+  getEmptyUser(): User {
+    return {
+      id: 0,
+      name: '',
+      department: '',
+      role: '',
+      active: true,
+      tasks: []
+    };
   }
 
+  get filteredUsers() {
+    return this.users.filter(user =>
+      user.name.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+  }
+
+  selectUser(user: User) {
+    this.selectedUser = user;
+    this.isEditing = false;
+    this.isAdding = false;
+    this.formUser = { ...user };
+  }
+
+  openAddUser() {
+    this.isAdding = true;
+    this.isEditing = false;
+    this.selectedUser = null;
+    this.formUser = this.getEmptyUser();
+    this.initialTask = '';
+  }
+
+  openEditUser() {
+    if (!this.selectedUser) return;
+    this.isEditing = true;
+    this.isAdding = false;
+    this.formUser = { ...this.selectedUser };
+  }
+
+  saveUser() {
+
+    // 🔥 ADD USER LOGIC
+    if (this.isAdding) {
+
+      if (this.initialTask.trim() !== '') {
+        this.formUser.tasks.push(this.initialTask.trim());
+      }
+
+      this.formUser.id = Date.now();
+      this.users.push({ ...this.formUser });
+
+      this.isAdding = false;
+      this.initialTask = '';
+    }
+
+    // 🔥 EDIT USER LOGIC
+    if (this.isEditing && this.selectedUser) {
+      Object.assign(this.selectedUser, this.formUser);
+      this.isEditing = false;
+    }
+  }
+
+  cancel() {
+    this.isEditing = false;
+    this.isAdding = false;
+  }
+
+  disableAccount() {
+    if (this.selectedUser) {
+      this.selectedUser.active = false;
+    }
+  }
+
+  allocateTask() {
+    if (this.selectedUser && this.newTask.trim() !== '') {
+      this.selectedUser.tasks.push(this.newTask.trim());
+      this.newTask = '';
+    }
+  }
+
+  removeTask(task: string) {
+    if (!this.selectedUser) return;
+    this.selectedUser.tasks =
+      this.selectedUser.tasks.filter(t => t !== task);
+  }
 }
