@@ -41,8 +41,25 @@ export class LoginComponent {
         alert('Login failed. Please try again.');
       }
 
+<<<<<<< HEAD
     } else {
       alert('Please enter email and password');
     }
+=======
+  onLogin() {
+  
+  if (this.loginObj.email && this.loginObj.password) {
+    
+   
+    if (this.loginObj.email === 'admin@checkmate.com') {
+      this.router.navigate(['/admin-dashboard']); 
+    } else {
+      this.router.navigate(['/dashboard']); 
+    }
+
+  } else {
+    
+    alert('Please enter email and password'); 
+>>>>>>> 238b9aa70725e31b506f9a90b1386d4005f49476
   }
 }
