@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private updateLandingFlag(): void {
   const url = this.router.url.split('?')[0];
-  // Yahan '/login' add kar diya hai
+  
   this.isLandingPage = url === '/' || url === '/landing' || url === '/login';
 }
 }

@@ -9,7 +9,7 @@ export class AdminDashboardComponent {
   
   // Widget: Users List
   users = [
-    { name: 'Sarah Chen (Admin)', role: 'Admin', img: 'assets/user1.png' }, // Images assets folder me daal lena
+    { name: 'Sarah Chen (Admin)', role: 'Admin', img: 'assets/user1.png' }, // Images in assets folder 
     { name: 'Mike Ross (Pemin)', role: 'Editor', img: 'assets/user2.png' },
     { name: 'Rachel Green', role: 'Viewer', img: 'assets/user3.png' },
     { name: 'John Doe', role: 'Admin', img: 'assets/user4.png' }

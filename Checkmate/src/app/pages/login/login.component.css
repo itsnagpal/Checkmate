@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8f9fa; /* Light background from image */
+  background-color: #f8f9fa; 
   font-family: sans-serif;
 }
 
@@ -152,4 +152,28 @@ h2 {
   font-size: 0.85rem;
   margin-top: 0.3rem;
   margin-left: 0.5rem;
+}
+
+
+
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+}
+
+
+.brand-logo-img {
+  height: auto !important;    
+  width: auto !important;     
+  max-width: 200px;           
+  object-fit: contain;        
+}
+
+
+.brand-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e1b4b; 
 }

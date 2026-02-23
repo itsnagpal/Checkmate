@@ -15,19 +15,18 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onLogin() {
-  // 1. Validation check
+  
   if (this.loginObj.email && this.loginObj.password) {
     
-    // 2. Mock Logic (Bina Alert ke seedha navigate karega)
+   
     if (this.loginObj.email === 'admin@checkmate.com') {
-      this.router.navigate(['/admin-dashboard']); // Admin -> Admin Dashboard
+      this.router.navigate(['/admin-dashboard']); 
     } else {
-      this.router.navigate(['/dashboard']); // Baaki sab -> User Dashboard
+      this.router.navigate(['/dashboard']); 
     }
 
   } else {
-    // Ye error alert rehne de sakte hain taaki user ko pata chale form khali hai
-    // Ya isse bhi hata kar console.log kar sakte hain
+    
     alert('Please enter email and password'); 
   }
 }
