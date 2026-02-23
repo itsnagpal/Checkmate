@@ -20,7 +20,8 @@ export class SidebarComponent {
   }
 
   // Check if logged user is admin
-  isAdmin(): boolean {
-    return this.authService.isAdmin();
+ isAdmin(): boolean {
+    // Agar URL mein 'admin' hai, tabhi Admin sidebar dikhao
+    return this.router.url.includes('admin'); 
   }
 }
