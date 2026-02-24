@@ -181,3 +181,20 @@
 .logout-section li:hover {
   background: rgba(255, 79, 79, 0.1);
 }
+.sidebar li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar li.active a {
+  background: linear-gradient(90deg, #4a7cff, #2b5cff);
+}

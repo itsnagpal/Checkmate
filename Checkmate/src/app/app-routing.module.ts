@@ -89,10 +89,10 @@ const routes: Routes = [
     canActivate: [AdminGuard]
   },
   { 
-    path: 'admin/tasks', 
-    component: AdminTasksComponent,
-    canActivate: [AdminGuard]
-  },
+  path: 'admin/checklist-builder', 
+  component: AdminChecklistsComponent,
+  canActivate: [AdminGuard]
+},
   { 
     path: 'admin/users', 
     component: UserManagementComponent,
@@ -103,11 +103,12 @@ const routes: Routes = [
     component: AdminRolesComponent,
     canActivate: [AdminGuard]
   },
+  
   { 
-    path: 'admin/departments', 
-    component: AdminDepartmentsComponent,
-    canActivate: [AdminGuard]
-  },
+  path: 'admin/checklist-tracker', 
+  component: ChecklistTrackerComponent,
+  canActivate: [AdminGuard]
+},
   { 
     path: 'admin/templates', 
     component: AdminTemplatesComponent,
@@ -141,6 +142,8 @@ const routes: Routes = [
 
   // Wildcard route - must be last
   { path: '**', component: NotFoundComponent },
+
+  
 ];
 
 @NgModule({

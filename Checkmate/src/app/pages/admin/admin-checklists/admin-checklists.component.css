@@ -1,0 +1,59 @@
+.page-container {
+  padding: 30px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.card {
+  background: #f4f6f9;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.task-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.add-btn {
+  background: #4a7cff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.create-btn {
+  margin-top: 15px;
+  background: #2b5cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
