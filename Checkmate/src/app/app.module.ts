@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-
-
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
@@ -32,8 +31,9 @@ import { AdminDepartmentsComponent } from './pages/admin/admin-departments/admin
 import { AdminTemplatesComponent } from './pages/admin/admin-templates/admin-templates.component';
 import { AdminWorkflowComponent } from './pages/admin/admin-workflow/admin-workflow.component';
 import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
-import { AdminNotificationsComponent } from './pages/admin/admin-notifications/admin-notifications.component';
+// import { AdminNotificationsComponent } from './pages/admin/admin-notifications/admin-notifications.component';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
+import { AdminNotificationsComponent} from './pages/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +64,7 @@ import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile
     RolesPermissionsComponent,
    AddRoleDrawerComponent,
     
+    AdminProfileComponent,
   ],
   imports: [
     BrowserModule,

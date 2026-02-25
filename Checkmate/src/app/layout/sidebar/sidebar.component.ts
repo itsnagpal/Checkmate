@@ -14,14 +14,11 @@ export class SidebarComponent {
     public authService: AuthService
   ) {}
 
-  // Highlight active route
   isActive(route: string): boolean {
     return this.router.url.includes(route);
   }
 
-  // Check if logged user is admin
  isAdmin(): boolean {
-    // Agar URL mein 'admin' hai, tabhi Admin sidebar dikhao
     return this.router.url.includes('admin'); 
   }
 
