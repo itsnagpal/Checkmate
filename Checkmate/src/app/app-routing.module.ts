@@ -33,6 +33,7 @@ import { AdminGuard } from './core/guards/admin.guard';
 const routes: Routes = [
   // Public routes (no guards)
   { path: '', component: LandingPageComponent },
+  { path: '#', redirectTo: '', pathMatch: 'full' },
   { path: 'landing', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   

@@ -25,8 +25,8 @@ export class AppComponent implements OnInit, OnDestroy {
     if (this.sub) this.sub.unsubscribe();
   }
 
-  private updateLandingFlag(): void {
-  const url = this.router.url.split('?')[0];
+private updateLandingFlag(): void {
+  const url = this.router.url.split('?')[0].split('#')[0];
   
   this.isLandingPage = url === '/' || url === '/landing' || url === '/login';
 }
