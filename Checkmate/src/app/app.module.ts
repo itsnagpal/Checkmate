@@ -31,7 +31,6 @@ import { AdminWorkflowComponent } from './pages/admin/admin-workflow/admin-workf
 import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
 // import { AdminNotificationsComponent } from './pages/admin/admin-notifications/admin-notifications.component';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
-import { AdminNotificationsComponent} from './pages/notifications/notifications.component';
 
 @NgModule({
   declarations: [
@@ -57,13 +56,14 @@ import { AdminNotificationsComponent} from './pages/notifications/notifications.
     AdminTemplatesComponent,
     AdminWorkflowComponent,
     AdminReportsComponent,
-    AdminNotificationsComponent,
+    //AdminNotificationsComponent,
     AdminProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

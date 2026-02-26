@@ -132,101 +132,106 @@
   color: white;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
-  line-height: 1.25;
-  margin: 0;
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
-  line-height: 1.5;
-  margin: 0;
-}
-
-.hero-content .btn-cta {
-  margin-top: 4px;
-  align-self: flex-start;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.55;
 }
 
 .btn-cta {
-  display: inline-block;
-  padding: 14px 32px;
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
   background: #f97316;
   color: white;
-  border-radius: 999px;
   font-weight: 600;
   font-size: 1rem;
+  border-radius: 10px;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
   transition: background 0.2s, box-shadow 0.2s;
+  width: fit-content;
 }
 
 .btn-cta:hover {
   background: #ea580c;
-  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.45);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
 }
 
-/* Illustration area – outline style, light blue accents */
 .hero-illustration {
-  flex: 0 0 auto;
-  width: min(320px, 35%);
-  min-width: 200px;
-  min-height: 160px;
+  width: 380px;
+  flex-shrink: 0;
 }
 
 .illus-windows {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: flex-start;
-  align-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
 }
 
 .illus-window {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(125, 211, 252, 0.6);
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-size: 0.8rem;
-  color: white;
-  flex-shrink: 0;
+  background: white;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  color: #334155;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .illus-window .check {
-  color: #7dd3fc;
+  color: #22c55e;
   margin-right: 6px;
+  font-weight: 700;
 }
 
 .illus-connector {
-  display: none;
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  bottom: 60px;
+  width: 2px;
+  background: #94a3b8;
 }
 
 .illus-node {
-  width: 40px;
-  height: 40px;
-  border: 2px solid rgba(125, 211, 252, 0.6);
+  position: absolute;
+  right: -20px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  flex-shrink: 0;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* White bottom section under hero – reduced so button stays in blue */
+.illus-node--user {
+  top: 20px;
+  background: #38bdf8;
+}
+
+.illus-node--gear {
+  bottom: 20px;
+  background: #f97316;
+}
+
 .hero-bottom-bg {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 35%;
-  min-height: 120px;
+  height: 100px;
   background: white;
-  z-index: 0;
+  clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 100%);
 }
 
-/* ===== WHY CHOOSE CHECKMATE (white) ===== */
+/* ===== FEATURES (white) ===== */
 .features {
   position: relative;
   z-index: 1;
@@ -236,10 +241,10 @@
 }
 
 .section-title {
-  text-align: center;
-  font-size: 1.85rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #1e293b;
+  text-align: center;
   margin: 0 0 48px 0;
 }
 
@@ -249,7 +254,6 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  align-items: stretch;
 }
 
 .feature-card {
@@ -279,6 +283,18 @@
   flex-shrink: 0;
 }
 
+.feature-icon--lightning {
+  color: #fbbf24;
+}
+
+.feature-icon--people {
+  color: #f472b6;
+}
+
+.feature-icon--chart {
+  color: #34d399;
+}
+
 .feature-icon svg {
   width: 32px;
   height: 32px;
@@ -292,6 +308,239 @@
 }
 
 .feature-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+  flex: 1;
+}
+
+/* ===== PRICING SECTION ===== */
+.pricing {
+  position: relative;
+  z-index: 1;
+  background: #f8fafc;
+  padding: 70px 40px 80px;
+  box-sizing: border-box;
+}
+
+.pricing-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: white;
+  padding: 32px 28px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card--featured {
+  border-color: #f97316;
+  transform: scale(1.05);
+}
+
+.pricing-card--featured:hover {
+  transform: scale(1.07);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f97316;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pricing-header {
+  margin-bottom: 24px;
+}
+
+.pricing-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 16px 0;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+.currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1;
+}
+
+.period {
+  font-size: 1rem;
+  color: #64748b;
+}
+
+.pricing-desc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  text-align: left;
+  flex: 1;
+}
+
+.pricing-features li {
+  padding: 8px 0;
+  font-size: 0.95rem;
+  color: #475569;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-features li::before {
+  content: "✓";
+  color: #22c55e;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.btn-pricing {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #1a365d;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn-pricing:hover {
+  background: #2d5a87;
+}
+
+.pricing-card--featured .btn-pricing {
+  background: #f97316;
+}
+
+.pricing-card--featured .btn-pricing:hover {
+  background: #ea580c;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 70px 40px 80px;
+  box-sizing: border-box;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: stretch;
+}
+
+.about-card {
+  background: white;
+  padding: 32px 28px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-card:hover {
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+.about-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 0 20px 0;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.about-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 10px 0;
+}
+
+.about-card p {
   font-size: 0.95rem;
   color: #475569;
   line-height: 1.55;
@@ -347,6 +596,14 @@
   }
 
   .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -418,6 +675,40 @@
   }
 
   .feature-card {
+    padding: 26px 22px;
+  }
+
+  .pricing {
+    padding: 50px 20px 60px;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing-card {
+    padding: 26px 22px;
+  }
+
+  .pricing-card--featured {
+    transform: scale(1);
+  }
+
+  .pricing-card--featured:hover {
+    transform: scale(1.02);
+  }
+
+  .about {
+    padding: 50px 20px 60px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-card {
     padding: 26px 22px;
   }
 }
