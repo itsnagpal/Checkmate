@@ -18,7 +18,7 @@ export class UserManagementComponent {
 
   searchText = '';
   newTask = '';
-  initialTask = '';   // 🔥 NEW for Add User
+  initialTask = '';   // NEW for Add User
 
   isEditing = false;
   isAdding = false;

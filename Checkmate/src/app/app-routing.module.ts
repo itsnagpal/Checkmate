@@ -24,6 +24,7 @@ import { AdminWorkflowComponent } from './pages/admin/admin-workflow/admin-workf
 import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
 // import { AdminNotificationsComponent } from './pages/admin/admin-notifications/admin-notifications.component';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
+import { RolesPermissionsComponent } from './pages/roles-permissions/roles-permissions.component'
 
 // Guards
 import { AuthGuard } from './core/guards/auth.guard';
@@ -134,6 +135,10 @@ const routes: Routes = [
     path: 'admin/profile', 
     component: AdminProfileComponent,
     canActivate: [AdminGuard]
+  },
+  { 
+    path: 'admin/roles-permissions', // Or whatever your sidebar link is using
+    component: RolesPermissionsComponent // <-- 2. Change this to our new component!
   },
 
   // Wildcard route - must be last

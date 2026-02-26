@@ -12,6 +12,8 @@ import { ChecklistDetailComponent } from './pages/checklist-detail/checklist-det
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { RolesPermissionsComponent } from '../app/pages/roles-permissions/roles-permissions.component'
+import { AddRoleDrawerComponent } from './pages/roles-permissions/add-role-drawer/add-role-drawer.component';
 
 import { ChecklistBuilderComponent } from './pages/checklist-builder/checklist-builder.component';
 import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-tracker.component';
@@ -57,6 +59,10 @@ import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile
     AdminWorkflowComponent,
     AdminReportsComponent,
     //AdminNotificationsComponent,
+    AdminProfileComponent,
+    RolesPermissionsComponent,
+   AddRoleDrawerComponent,
+    
     AdminProfileComponent,
   ],
   imports: [
