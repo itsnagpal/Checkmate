@@ -22,13 +22,13 @@ import { AdminDepartmentsComponent } from './pages/admin/admin-departments/admin
 import { AdminTemplatesComponent } from './pages/admin/admin-templates/admin-templates.component';
 import { AdminWorkflowComponent } from './pages/admin/admin-workflow/admin-workflow.component';
 import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
-// import { AdminNotificationsComponent } from './pages/admin/admin-notifications/admin-notifications.component';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
 import { RolesPermissionsComponent } from './pages/roles-permissions/roles-permissions.component'
 
 // Guards
 import { AuthGuard } from './core/guards/auth.guard';
 import { AdminGuard } from './core/guards/admin.guard';
+import { AdminNotificationsComponent } from './pages/notifications/notifications.component';
 
 const routes: Routes = [
   // Public routes (no guards)
@@ -130,18 +130,21 @@ const routes: Routes = [
     component: SecurityComplianceComponent,
     canActivate: [AdminGuard]
   },
-  // Notification route removed - component doesn't exist
+  { 
+    path: 'admin/notifications', 
+    component: AdminNotificationsComponent,
+    canActivate: [AdminGuard]
+  },
   { 
     path: 'admin/profile', 
     component: AdminProfileComponent,
     canActivate: [AdminGuard]
   },
   { 
-    path: 'admin/roles-permissions', // Or whatever your sidebar link is using
-    component: RolesPermissionsComponent // <-- 2. Change this to our new component!
+    path: 'admin/roles-permissions', 
+    component: RolesPermissionsComponent 
   },
 
-  // Wildcard route - must be last
   { path: '**', component: NotFoundComponent },
 
   
