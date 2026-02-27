@@ -33,6 +33,7 @@ import { AdminNotificationsComponent } from './pages/notifications/notifications
 const routes: Routes = [
   // Public routes (no guards)
   { path: '', component: LandingPageComponent },
+  { path: '#', redirectTo: '', pathMatch: 'full' },
   { path: 'landing', component: LandingPageComponent },
   { path: 'login', component: LoginComponent },
   
