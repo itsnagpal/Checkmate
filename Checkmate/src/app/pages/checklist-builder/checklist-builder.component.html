@@ -18,6 +18,21 @@
              placeholder="Enter department" />
     </div>
 
+    <div class="form-group">
+      <label>Template</label>
+      <select [(ngModel)]="checklist.template">
+        <option value="">Select Template</option>
+        <option *ngFor="let t of templates" [value]="t">{{t}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Section</label>
+      <input type="text"
+             [(ngModel)]="checklist.section"
+             placeholder="Enter section name (e.g. HR Tasks)" />
+    </div>
+
     <h3>Tasks</h3>
 
     <div *ngFor="let task of checklist.tasks; let i = index" class="task-box">
@@ -30,10 +45,37 @@
              [(ngModel)]="task.description"
              placeholder="Task Description" />
 
+      <label>Priority</label>
       <select [(ngModel)]="task.priority">
         <option value="Low">Low</option>
         <option value="Medium">Medium</option>
         <option value="High">High</option>
+      </select>
+
+      <label>Deadline</label>
+      <input type="date"
+             [(ngModel)]="task.deadline" />
+
+      <label>Dependency</label>
+      <select [(ngModel)]="task.dependency">
+        <option [ngValue]="null">None</option>
+        <option *ngFor="let t of checklist.tasks"
+                [ngValue]="t.id"
+                [disabled]="t.id === task.id">
+          {{t.title || ('Task ' + t.id)}}
+        </option>
+      </select>
+
+      <label>
+        <input type="checkbox"
+               [(ngModel)]="task.conditional" />
+        Conditional Item
+      </label>
+
+      <label>Workflow Type</label>
+      <select [(ngModel)]="task.workflowType">
+        <option value="Sequential">Sequential</option>
+        <option value="Parallel">Parallel</option>
       </select>
 
       <button (click)="removeTask(i)" class="delete-btn">
