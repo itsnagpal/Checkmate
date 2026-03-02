@@ -49,7 +49,7 @@ export class SecurityComplianceComponent implements OnInit, OnDestroy {
   ];
 
   complianceItems: ComplianceStatus[] = [
-    { name: 'GDPR Compliance', status: true, description: 'Data protection regulation' },
+    { name: 'GDPR Compliance', status: false, description: 'Data protection regulation' },
     { name: 'ISO 27001 Certified', status: true, description: 'Information security management' },
     { name: 'Data Encryption', status: true, description: 'AES-256 encryption at rest' },
     { name: 'Security Audits', status: true, description: 'Monthly security reviews' }

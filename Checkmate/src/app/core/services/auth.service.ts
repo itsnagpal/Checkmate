@@ -42,14 +42,14 @@ export class AuthService {
   }
 
   /**
-   * Logout - clear storage and navigate to login
+   * Logout - clear storage and navigate to landing page
    */
   logout(): void {
     localStorage.removeItem(this.TOKEN_KEY);
     localStorage.removeItem(this.ROLE_KEY);
     localStorage.removeItem(this.USER_KEY);
     this.role = '';
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
   }
 
   /**

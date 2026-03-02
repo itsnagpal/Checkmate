@@ -31,7 +31,7 @@ import { AdminDepartmentsComponent } from './pages/admin/admin-departments/admin
 import { AdminTemplatesComponent } from './pages/admin/admin-templates/admin-templates.component';
 import { AdminWorkflowComponent } from './pages/admin/admin-workflow/admin-workflow.component';
 import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
-// import { AdminNotificationsComponent } from './pages/admin/admin-notifications/admin-notifications.component';
+import { AdminNotificationsComponent } from './pages/notifications/notifications.component';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
 
 @NgModule({
@@ -58,7 +58,7 @@ import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile
     AdminTemplatesComponent,
     AdminWorkflowComponent,
     AdminReportsComponent,
-    //AdminNotificationsComponent,
+    AdminNotificationsComponent,
     AdminProfileComponent,
     RolesPermissionsComponent,
    AddRoleDrawerComponent,

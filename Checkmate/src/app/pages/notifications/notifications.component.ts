@@ -12,35 +12,30 @@ export class AdminNotificationsComponent {
       icon: '🔔',
       title: "New Assignment: 'Complete IT Setup for John Doe'",
       description: "Admin has assigned this task to you for quick review.",
-      showLink: true,
       borderColor: '#4ade80' 
     },
     {
       icon: '⚙️',
       title: "Overdue Task:",
       description: "'Quarterly Compliance Audit' deadline passed.",
-      showLink: true,
       borderColor: '#4ade80'
     },
     {
       icon: '⚙️',
       title: "Overdue Task:",
       description: "'Quarterly Compliance Audit' deadline passed.",
-      showLink: true,
       borderColor: '#4ade80'
     },
     {
       icon: '📋',
       title: "Workflow Approval",
       description: "Vendor IT Setup for new VPN Client.",
-      showLink: true,
       borderColor: '#4ade80'
     },
     {
       icon: '💬',
       title: "New Comment:",
       description: "John Lee commented on 'Install VPN Client'.",
-      showLink: false,
       borderColor: '#4ade80'
     }
   ];
