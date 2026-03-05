@@ -16,7 +16,7 @@ import { RolesPermissionsComponent } from '../app/pages/roles-permissions/roles-
 import { AddRoleDrawerComponent } from './pages/roles-permissions/add-role-drawer/add-role-drawer.component';
 
 import { ChecklistBuilderComponent } from './pages/checklist-builder/checklist-builder.component';
-import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-tracker.component';
+// import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-tracker.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 import { SecurityComplianceComponent } from './pages/security-compliance/security-compliance.component';
 
@@ -24,7 +24,7 @@ import { SecurityComplianceComponent } from './pages/security-compliance/securit
 import { ReportsComponent } from './pages/reports/reports.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AdminChecklistsComponent } from './pages/admin/admin-checklists/admin-checklists.component';
+// import { AdminChecklistsComponent } from './pages/admin/admin-checklists/admin-checklists.component';
 import { AdminTasksComponent } from './pages/admin/admin-tasks/admin-tasks.component';
 import { AdminRolesComponent } from './pages/admin/admin-roles/admin-roles.component';
 import { AdminDepartmentsComponent } from './pages/admin/admin-departments/admin-departments.component';
@@ -33,6 +33,7 @@ import { AdminWorkflowComponent } from './pages/admin/admin-workflow/admin-workf
 import { AdminReportsComponent } from './pages/admin/admin-reports/admin-reports.component';
 import { AdminNotificationsComponent } from './pages/notifications/notifications.component';
 import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile.component';
+import { ChecklistTrackerComponent } from './pages/all-checklists/all-checklists.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile
     ReportsComponent,
     ProfileComponent,
     NotFoundComponent,
-    AdminChecklistsComponent,
+    // ChecklistTrackerComponent,
     AdminTasksComponent,
     AdminRolesComponent,
     AdminDepartmentsComponent,
@@ -61,9 +62,9 @@ import { AdminProfileComponent } from './pages/admin/admin-profile/admin-profile
     AdminNotificationsComponent,
     AdminProfileComponent,
     RolesPermissionsComponent,
-   AddRoleDrawerComponent,
-    
+    AddRoleDrawerComponent,
     AdminProfileComponent,
+    ChecklistTrackerComponent,
   ],
   imports: [
     BrowserModule,

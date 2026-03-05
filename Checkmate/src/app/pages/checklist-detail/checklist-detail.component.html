@@ -1,8 +1,7 @@
 <div class="page-container">
-  <div class="content-wrapper">
+  <div class="content-wrapper" *ngIf="checklist">
     
     <div class="header-section">
-      <div class="breadcrumb">Checklist Detail</div>
       <h1>{{ checklist.title }}</h1>
       <div class="status-row">
         <span class="status-pill">{{ checklist.status }}</span>
@@ -33,8 +32,6 @@
             </button>
           </div>
         </div>
-
-        <button class="add-task-btn">Add Task</button>
       </div>
 
       <div class="right-column">

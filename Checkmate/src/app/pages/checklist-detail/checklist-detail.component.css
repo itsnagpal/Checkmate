@@ -6,8 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header */
-.breadcrumb { font-size: 0.85rem; color: #888; margin-bottom: 5px; }
+
 h1 { color: #1e293b; margin: 0 0 15px 0; font-size: 1.8rem; }
 
 .status-row { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }

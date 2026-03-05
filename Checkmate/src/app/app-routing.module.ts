@@ -7,14 +7,13 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { LoginComponent } from './pages/login/login.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { ChecklistBuilderComponent } from './pages/checklist-builder/checklist-builder.component';
-import { ChecklistTrackerComponent } from './pages/checklist-tracker/checklist-tracker.component';
+import { ChecklistTrackerComponent } from './pages/all-checklists/all-checklists.component';
 import { UserManagementComponent } from './pages/user-management/user-management.component';
 import { SecurityComplianceComponent } from './pages/security-compliance/security-compliance.component';
 
 import { ReportsComponent } from './pages/reports/reports.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { AdminChecklistsComponent } from './pages/admin/admin-checklists/admin-checklists.component';
 import { AdminTasksComponent } from './pages/admin/admin-tasks/admin-tasks.component';
 import { AdminRolesComponent } from './pages/admin/admin-roles/admin-roles.component';
 import { AdminDepartmentsComponent } from './pages/admin/admin-departments/admin-departments.component';
@@ -36,7 +35,7 @@ const routes: Routes = [
 
   { path: 'dashboard', component: UserDashboardComponent, canActivate: [AuthGuard] },
   { path: 'checklists', component: ChecklistDetailComponent, canActivate: [AuthGuard] },
-  { path: 'checklist-detail', component: ChecklistDetailComponent, canActivate: [AuthGuard] },
+  { path: 'checklist-detail/:id', component: ChecklistDetailComponent, canActivate: [AuthGuard] },
   { path: 'checklist-builder', component: ChecklistBuilderComponent, canActivate: [AuthGuard] },
   { path: 'checklist-tracker', component: ChecklistTrackerComponent, canActivate: [AuthGuard] },
   { path: 'reports', component: ReportsComponent, canActivate: [AuthGuard] },
@@ -45,7 +44,7 @@ const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AdminGuard] },
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AdminGuard] },
 
-  { path: 'admin/checklists', component: AdminChecklistsComponent, canActivate: [AdminGuard] },
+  { path: 'admin/checklists', component: ChecklistTrackerComponent, canActivate: [AdminGuard] },
 
   { path: 'admin/checklist-builder', component: ChecklistBuilderComponent, canActivate: [AdminGuard] },
 
