@@ -18,7 +18,7 @@ interface DashboardStat {
 })
 export class AdminDashboardComponent implements OnInit, OnDestroy {
   private readonly destroy$ = new Subject<void>();
-  private readonly refreshMs = 10000;
+  private readonly refreshMs = 60000;
 
   isLoading = true;
   loadError = '';
