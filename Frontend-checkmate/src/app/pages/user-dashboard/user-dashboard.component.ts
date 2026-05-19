@@ -52,7 +52,7 @@ export class UserDashboardComponent implements OnInit, OnDestroy {
     this.loadNotifications();
 
     // Poll every 30 seconds
-    this.pollingSub = interval(30000).subscribe(() => {
+    this.pollingSub = interval(60000).subscribe(() => {
       this.loadDashboard();
       this.loadNotifications();
     });
